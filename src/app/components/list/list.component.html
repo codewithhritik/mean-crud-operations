@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Posts</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Posts and Description</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PostName</th>
+                        <th>Description</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of posts">
+                        <td>{{post._id}}</td>
+                        <td>{{post.name}}</td>
+                        <td>{{post.desc}}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" style="margin: 1em;" (click)="doUpdate(post)">Update</button>
+                            <button class="btn btn-danger btn-sm" style="margin: 1em;" (click)="doDelete(post)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
